@@ -1,28 +1,15 @@
 <!DOCTYPE html>
 <html lang="ru">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="shortcut icon" href="favicon.png" type="image/png">
-    <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Playfair+Display|Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
-    <script src="jq.js" defer></script>
-    <script src="main.js" defer></script>
-    <title>Путешествия</title>
-</head>
+<?php
+    $title = "Путешествия вокруг земли";
+    require $_SERVER['DOCUMENT_ROOT']. "/19_pro/includes/head.inc.php";
+?>
 
 <body>
-    <header class="header">
-        <div class="logo"></div>
-        <nav class="nav">
-            <a href="#main">Главная</a>
-            <a href="#about">О нас</a>
-            <a href="#contacts">Контакты</a>
-        </nav>
-    </header>
+<?php
+    require $_SERVER['DOCUMENT_ROOT']. "/19_pro/includes/header.inc.php";
+    // print_r($_SERVER);
+?>
     <div class="side_nav">
         <a class="side_nav__a" href="#main">Главная</a>
         <a class="side_nav__a" href="#about">О нас</a>
@@ -49,29 +36,10 @@
             </a>
         </div>
     </div>
-    <section class="info" id="main">
-        <h3 class="info__h3">
-            Путешествуй красиво! Блог в фотографиях!
-        </h3>
-        <div class="info_text">
-            <p class="info_text__p">
-                Таким образом высокотехнологичная концепция общественной системы создаёт предпосылки качественно новых
-                шагов для экономической целесообразности принимаемых изменений.
-            </p>
-            <p class="info_text__p">
-                Значимость этих проблем настолько очевидна, что управление и развитие структуры способствует повышению
-                качества поэтапного и последовательного развития общества.
-            </p>
-            <p class="info_text__p">
-                Для современного мира начало повседневной работы по формированию позиции требует определения и уточнения
-                экономической целесообразности принимаемых изменений.
-            </p>
-            <p class="info_text__p">
-                Следует отметить, что постоянный количественный рост и сфера нашей активности играет важную роль в
-                формировании существующий финансовых и административных условий.
-            </p>
-        </div>
-    </section>
+
+<?php
+    require $_SERVER['DOCUMENT_ROOT']. "/19_pro/includes/info.inc.php";
+?>
     <section class="info info__centr">
         <h3 class="info__h3">
             Причины воспользоваться нашими услугами!

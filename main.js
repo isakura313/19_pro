@@ -92,16 +92,16 @@ cross[0].onclick = () => {
 // в зависимости от ответа меняет background promo
 //страница должна полностью загрузиться
 //данные должны приводится к нижнему регистру для универсальности
-setTimeout(() => {
-    let answer = prompt("введите страну, в которую хотите отправиться");
-    let answer2 = prompt("введите еще страну");
-    let promo = document.querySelector(".promo");
-    let footer = document.querySelector("footer");
-    let arr_country = ["финляндия", "эстония", "норвегия", "швеция", "дания", "болгария"];
-    let arr_hello = ["Хей фин", "Хей эст", "Хей норв", "Хей швед", "Хей дания", "Хей болг"];
-    GetInfo(answer, arr_country, arr_hello, promo);
-    GetInfo(answer2, arr_country, arr_hello, footer);
-}, 600);
+// setTimeout(() => {
+//     let answer = prompt("введите страну, в которую хотите отправиться");
+//     let answer2 = prompt("введите еще страну");
+//     let promo = document.querySelector(".promo");
+//     let footer = document.querySelector("footer");
+//     let arr_country = ["финляндия", "эстония", "норвегия", "швеция", "дания", "болгария"];
+//     let arr_hello = ["Хей фин", "Хей эст", "Хей норв", "Хей швед", "Хей дания", "Хей болг"];
+//     GetInfo(answer, arr_country, arr_hello, promo);
+//     GetInfo(answer2, arr_country, arr_hello, footer);
+// }, 600);
 
 
 
