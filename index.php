@@ -38,70 +38,12 @@
     </div>
 
 <?php
-    require $_SERVER['DOCUMENT_ROOT']. "/19_pro/includes/info.inc.php";
+require $_SERVER['DOCUMENT_ROOT']. "/19_pro/includes/info.inc.php";
+require $_SERVER['DOCUMENT_ROOT']. "/19_pro/includes/info_2.inc.php";
+require $_SERVER['DOCUMENT_ROOT']. "/19_pro/includes/cards.inc.php";
 ?>
-    <section class="info info__centr">
-        <h3 class="info__h3">
-            Причины воспользоваться нашими услугами!
-        </h3>
-        <ul class="info__ul">
-            <li>Веселые анимации</li>
-            <li> Неплохие номера</li>
-            <li> Быстрые самолеты</li>
-            <li> Мягкий песок на пляже</li>
-        </ul>
-    </section>
 
-    <section class="cards" id="about">
-        <div class="card animated zoomIn">
-            <div class="card__img card__moscow"></div>
-            <h3 class="card__h3"> Путешествия по России</h3>
-            <div class="card__line"></div>
-            <p class="card__p"> Балалайки, матрешки, Кремль</p>
-        </div>
-        <div class="card animated zoomIn delay-1s">
-            <div class="card__img card__london"></div>
-            <h3 class="card__h3"> Путешествия по Европе</h3>
-            <div class="card__line"></div>
-            <p class="card__p"> Разные страны, разные культуры!
-                Все самое модное в Европе!
-            </p>
-        </div>
-        <div class="card animated zoomIn delay-2s">
-            <div class="card__img card__africa"></div>
-            <h3 class="card__h3"> Путешествия по Африке</h3>
-            <div class="card__line"></div>
-            <p class="card__p"> Классные сафари, быстрые львы и
-                неверотные саванны! Все в одном флаконе! Бонус:
-                купание с крокодилами
-            </p>
-        </div>
-        <div class="card animated zoomIn delay-3s">
-            <div class="card__img card__north"></div>
-            <h3 class="card__h3"> Путешествия по Северной Америке</h3>
-            <div class="card__line"></div>
-            <p class="card__p"> Конечно мы проедем всю Америку,
-                и обязательно заедем в Голливуд!
-            </p>
-        </div>
-        <div class="card animated zoomIn delay-4s">
-            <div class="card__img card__south"></div>
-            <h3 class="card__h3"> Путешествия по Южной Америке!</h3>
-            <div class="card__line"></div>
-            <p class="card__p"> Южная Америка ждет нас! И там куда безопаснее,
-                чем в американских фильмах!
-            </p>
-        </div>
-        <div class="card animated zoomIn delay-5s">
-            <div class="card__img card__australia"></div>
-            <h3 class="card__h3"> Путешествия по Австралии</h3>
-            <div class="card__line"></div>
-            <p class="card__p">
-                Австралия, кенгуру, летающих пауков там нет! Или есть.
-                Приезжайте и проверьте сами
-            </p>
-        </div>
-    </section>
+
     <section class="form_wrapper animated">
         <h3 class="form__h3"> Оставьте заявку </h3>
         <span class="error_message">  </span>
@@ -126,36 +68,10 @@
         </form>
 
     </section>
-
-    <div class="faq_wrapper">
-        <div class="faq__panel">
-            <div class="faq__panel__quest">
-                <i class=" fas fa-angle-up"></i>
-                Сколько за тур?
-            </div>
-            <div class="faq__panel__answer">
-                Недорого. В дороге накормим
-            </div>
-        </div>
-        <div class="faq__panel">
-            <div class="faq__panel__quest">
-                    <i class="fas fa-angle-up"></i>
-                Сколько стоит виза?
-            </div>
-            <div class="faq__panel__answer">
-               Зачем виза? Мы так провезем
-            </div>
-        </div>
-        <div class="faq__panel">
-            <div class="faq__panel__quest">
-                    <i class="fas fa-angle-up"></i>
-                Можно ли полетать на воздушном шаре
-            </div>
-            <div class="faq__panel__answer">
-                Можно, но недолго и невысоко
-            </div>
-        </div>
-    </div>
+    
+    <?php
+    require $_SERVER['DOCUMENT_ROOT']. "/19_pro/includes/faq.inc.php";
+    ?>
     <footer id="contacts">
         <div class="footer_wrap">
             <div class="contacts">

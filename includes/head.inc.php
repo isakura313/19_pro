@@ -7,7 +7,7 @@
 
     <meta name='keywords' content=";
 
-        $key = implode('', $keywords);
+        $key = implode(',', $keywords);
        
     
     echo $key;

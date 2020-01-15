@@ -1,8 +1,8 @@
 <?php
 require $_SERVER['DOCUMENT_ROOT']. "/19_pro/includes/config.inc.php";
-echo "<section class='info' id='main'>
+ECHO "<section class='info' id='main'>
 <h3 class='info__h3'>
-    Путешествуй красиво! Блог в фотографиях!
+    {$headers[0]}
 </h3>
 <div class='info_text'> ";
 for ($i=0; $i < count($info); $i++) { 
