@@ -1,9 +1,22 @@
 <?php
+require $_SERVER['DOCUMENT_ROOT']. "/19_pro/includes/connect.inc.php";
+
 $keywords = ["'Путешествия ", "путевки в Турцию ", "Мальдивы ",
  "Финляндия ", "Корфу ", "Швеция '"];
- $anchor = ["Color" =>["white", "red", "green"],
-  "Path"=> ["#main", "#about", "#contacts"], 
-  "Content"=>["Главная", "О нас", " Контакты"]];
+
+ if($result = $connect->query("SELECT * FROM anchors")){
+    $anchors_db = ["Color" =>[], "Path"=> [],"Content"=>[], "Order"=>[]];
+    while($row = $result->fetch_assoc()){
+        array_push($anchors_db["Color"], $row["color"]);
+        array_push($anchors_db["Path"], $row["path"]);
+        array_push($anchors_db["Content"], $row["content"]);
+        array_push($anchors_db["Order"], $row["ordera"]);
+    }
+    $result->close();
+ }
+ $anchor = $anchors_db;
+
+
  $info = ["Таким образом высокотехнологичная концепция общественной системы создаёт предпосылки качественно новых
  шагов для экономической целесообразности принимаемых изменений", 
  "Значимость этих проблем настолько очевидна, что управление и развитие структуры способствует повышению
