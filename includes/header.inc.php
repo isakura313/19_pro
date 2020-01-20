@@ -1,4 +1,5 @@
 <?php
+print_r($anchor);
 echo "<header class='header'>
       <div class='logo'></div>
         <nav class='nav'>";
