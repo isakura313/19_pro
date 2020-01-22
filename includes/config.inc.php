@@ -1,37 +1,66 @@
 <?php
 require $_SERVER['DOCUMENT_ROOT']. "/19_pro/includes/connect.inc.php";
 
-$keywords = ["'Путешествия ", "путевки в Турцию ", "Мальдивы ",
- "Финляндия ", "Корфу ", "Швеция '"];
+if($result = $connect->query("SELECT * FROM keywords")){
+    $keywords = [];
+    while($row = $result->fetch_assoc()){
+        array_push($keywords, $row["keywords"]);
+    }
+    $result->close();
+}
 
  if($result = $connect->query("SELECT * FROM anchors")){
-    $anchors_db = ["Color" =>[], "Path"=> [],"Content"=>[], "Order"=>[]];
+    $anchor = ["Color" =>[], "Path"=> [],"Content"=>[], "Order"=>[]];
     while($row = $result->fetch_assoc()){
-        array_push($anchors_db["Color"], $row["color"]);
-        array_push($anchors_db["Path"], $row["path"]);
-        array_push($anchors_db["Content"], $row["content"]);
-        array_push($anchors_db["Order"], $row["ordera"]);
+        array_push($anchor["Color"], $row["color"]);
+        array_push($anchor["Path"], $row["path"]);
+        array_push($anchor["Content"], $row["content"]);
+        array_push($anchor["Order"], $row["ordera"]);
     }
     $result->close();
  }
- $anchor = $anchors_db;
 
 
- $info = ["Таким образом высокотехнологичная концепция общественной системы создаёт предпосылки качественно новых
- шагов для экономической целесообразности принимаемых изменений", 
- "Значимость этих проблем настолько очевидна, что управление и развитие структуры способствует повышению
- качества поэтапного и последовательного развития общества.", 
- "Для современного мира начало повседневной работы по формированию позиции требует определения и уточнения
- экономической целесообразности принимаемых изменений.", 
- "Следует отметить, что постоянный количественный рост и сфера нашей активности играет важную роль в
- формировании существующий финансовых и административных условий."];
 
-$headers = ["ПУТЕШЕСТВУЙ КРАСИВО! БЛОГ В ФОТОГРАФИЯХ!", "ПРИЧИНЫ ВОСПОЛЬЗОВАТЬСЯ НАШИМИ УСЛУГАМИ!"];
+ if($result = $connect->query("SELECT * FROM info ORDER BY ordera")){
+    $info = [];
+    while($row = $result->fetch_assoc()){
+        array_push($info, $row["content"]);
+    }
+    $result->close();
+}
 
-$li_info = ["Веселые анимации", "Неплохие номера" , "Быстрые самолеты", "Мягкий песок на пляже"];
-$faq = ["QUEST"=>["Сколько за тур?", "Сколько стоит виза?", "Можно ли полетать на воздушном шаре"],
-"ANSWER"=>["Недорого. В дороге накормим","Зачем виза? Мы так провезем", "Можно, но недолго и невысоко"]
-];
+
+if($result = $connect->query("SELECT * FROM headers")){
+    $headers = [];
+    while($row = $result->fetch_assoc()){
+        array_push($headers, $row["content"]);
+    }
+    $result->close();
+}
+
+
+if($result = $connect->query("SELECT * FROM li_info")){
+    $li_info = [];
+    while($row = $result->fetch_assoc()){
+        array_push($li_info, $row["content"]);
+    }
+    $result->close();
+}
+
+
+
+
+if($result = $connect->query("SELECT * FROM faq ORDER BY ordera")){
+    $faq = ["QUEST"=>[],"ANSWER"=>[]];
+    while($row = $result->fetch_assoc()){
+        array_push($faq["QUEST"], $row["quest"]);
+        array_push($faq["ANSWER"], $row["answer"]);
+    }
+    $result->close();
+
+}
+
 
 if($result = $connect->query("SELECT * FROM cards")){
     $cards = ["Img"=>[], "Header"=> [], "Parag" => [], "Ordera" => []];
