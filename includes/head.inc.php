@@ -12,8 +12,18 @@
     
     echo $key;
     echo "<link rel='shortcut icon' href='favicon.png' type='image/png'>
-    <link rel='stylesheet' href='css/style.css'>
-    <link href='https://fonts.googleapis.com/css?family=Playfair+Display|Roboto&display=swap' rel='stylesheet'>
+
+    <link rel='stylesheet' href='";
+    echo $_SERVER['HTTP_HOST']."/19_pro/css/style.css";
+    echo"'>";
+
+    echo "<link rel='stylesheet' href='http://";
+    echo $_SERVER['HTTP_HOST'];
+    echo "/19_pro/css/style.css'>";
+
+
+
+    echo "<link href='https://fonts.googleapis.com/css?family=Playfair+Display|Roboto&display=swap' rel='stylesheet'>
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css'>
     <script src='jq.js' defer></script>
     <script src='main.js' defer></script>

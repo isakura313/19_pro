@@ -1,18 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" href="../css/bulma.min.css">
-</head>
-<body>
+<?php
+require $_SERVER['DOCUMENT_ROOT']. "/19_pro/admin/admin.head.php";
+?>
     <section class="has-background-link columns ">
         <div class="column is-full">
             <h1 class="label is-size-2 has-text-centered has-text-white"> Hello user</h1>
             <h3 class="is-size-2 has-text-centered has-text-white">CMS система  <span class="has-text-danger has-text-weight-bold">Nordic </span>  </h3>
-
+        <!-- <?php
+    require $_SERVER['DOCUMENT_ROOT']. "/19_pro/includes/header.inc.php";
+    ?> -->
+     <!-- переписать чуть позже -->
         </div>
     </section>
         <div class="columns">

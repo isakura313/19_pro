@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: localhost
--- Время создания: Янв 22 2020 г., 19:36
+-- Время создания: Янв 27 2020 г., 19:37
 -- Версия сервера: 10.3.16-MariaDB
 -- Версия PHP: 7.3.7
 
@@ -44,7 +44,7 @@ INSERT INTO `anchors` (`id`, `color`, `path`, `content`, `ordera`) VALUES
 (1, 'white', '#main', 'Главная', 5),
 (2, 'red', '#about', 'О нас', 10),
 (3, 'green', '#contacts', 'Контакты', 15),
-(4, 'red', 'admin/admin.html', 'Админка', 20);
+(4, 'red', 'admin/admin.php', 'Админка', 20);
 
 -- --------------------------------------------------------
 
@@ -129,7 +129,8 @@ CREATE TABLE `info` (
 --
 
 INSERT INTO `info` (`id`, `content`, `ordera`) VALUES
-(1, 'Таким образом высокотехнологичная концепция общественной системы создаёт предпосылки качественно новых\r\n шагов для экономической целесообразности принимаемых изменений', 1);
+(4, ' Spin up a managed Kubernetes cluster in just a few clicks. Simply specify the size and location of your worker nodes.', 20),
+(12, 'asdasd', 2323);
 
 -- --------------------------------------------------------
 
@@ -250,7 +251,7 @@ ALTER TABLE `headers`
 -- AUTO_INCREMENT для таблицы `info`
 --
 ALTER TABLE `info`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT для таблицы `keywords`
