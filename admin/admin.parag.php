@@ -1,5 +1,7 @@
 <?php
 require $_SERVER['DOCUMENT_ROOT']. "/19_pro/admin/admin.head.php";
+require $_SERVER['DOCUMENT_ROOT']. "/19_pro/includes/config.inc.php";
+
 ?>
 <section class="columns has-background-info is-centered">
     <div class="column is-half has-text-centered">
@@ -45,6 +47,30 @@ require $_SERVER['DOCUMENT_ROOT']. "/19_pro/admin/admin.head.php";
 
 </section>
 <!-- тут выводится список параграфов с их id -->
-
+<!-- хотим длину параграфы обрезато до 30 символов -->
+<div class="columns is-centered">
+<div class="column is-half">
+<table class="table is-bordered is-hoverable">
+    <thead>
+    <tr>
+<?php
+    foreach ($info_cms as $key => $value){
+        echo "<th> {$key} </th>";
+    }
+?> 
+    </tr>
+    </thead>
+<?php
+for ($i=0; $i < count($info_cms["id"]); $i++) { 
+   echo "<tr>";
+    echo "<th> {$info_cms['id'][$i]} </th>";
+    echo "<th> {$info_cms['content'][$i]}</th>";
+    echo "<th>  {$info_cms['ordera'][$i]} </th>";
+   echo "</tr>";
+}
+?>
+</table>
+</div>
+</div>
 </body>
 </html>

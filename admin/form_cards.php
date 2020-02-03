@@ -2,14 +2,24 @@
 
 require $_SERVER['DOCUMENT_ROOT']. "/19_pro/includes/connect.inc.php";
 require $_SERVER['DOCUMENT_ROOT']. "/19_pro/includes/config.inc.php";
-$ans = $_GET['choose'];
-$id = $_GET['id'];
-$p = $_GET['parag_cont'];
-$ordera = $_GET['ordera'];
-print_r($_GET);
+$ans = $_POST['choose'];
+$id = $_POST['id'];
+$header = $_POST['header'];
+$parag = $_POST['parag_cont'];
+$ordera = $_POST['ordera'];
+
+
+print_r($_POST);
 // echo($ans);
 
 if($ans=="ins"){
+    print_r($_FILES);
+    $upload_name =  uniqid() .$_FILES['picture']['name']; // несовершенный код
+    $path = "img/upload_img/. $upload_name";
+    $uploaddir  = $_SERVER["DOCUMENT_ROOT"]."/19_pro/img/upload_img/";
+    $uploadfile = $uploaddir .$upload_name;
+
+    // здесь у нас будет движение этого файла и показатель, загрузился он или нет
    $sql = "INSERT INTO info VALUES ('$id', '$p', '$ordera')";
    if($connect->query($sql)){
    echo "Новая запись успешно загружена $back $back_timer";

@@ -7,6 +7,8 @@ echo "<!DOCTYPE html>
     <meta http-equiv='X-UA-Compatible' content='ie=edge'>
     <title>Document</title>
     <link rel='stylesheet' href='../css/bulma.min.css'>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css'>
+
 </head>
 <body>";
 
