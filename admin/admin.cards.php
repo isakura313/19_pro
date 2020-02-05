@@ -11,7 +11,7 @@ require $_SERVER['DOCUMENT_ROOT']. "/19_pro/includes/config.inc.php";
         <img src="../img/kangaroo.png" class="is-size-6">
         <!-- сделать так что бы мы получали из первой карточки картинку -->
     </figure>
-    <form action="form_p.php" method="POST" class="has-background-white ter">
+    <form action="form_cards.php" method="POST" class="has-background-white ter" enctype="multipart/form-data">
         <div class="field">
             <label class="radio">
                 <input type="radio" name="choose" value="ins" required>
@@ -38,9 +38,9 @@ require $_SERVER['DOCUMENT_ROOT']. "/19_pro/includes/config.inc.php";
                 <input type="text" class="input is-medium" placeholder="Заголовок" name="header" >
                 
                 <div class="field">
-                <label class="label">  Загрузите картинку </label>
+                <label class="label">  Загрузите картинку 
                 <div class="file is-centered">
-                       <input class="file-input" type="file" name="picture is-centered">
+                       <input class="file-input" type="file" name="picture">
                          <span class="file-cta">
                         <span class="file-icon">
                             <i class="fas fa-upload"></i>
@@ -49,7 +49,7 @@ require $_SERVER['DOCUMENT_ROOT']. "/19_pro/includes/config.inc.php";
                    Выберите файл
                 </span>
                 </span>
-               
+                </label>
                 </div>
                 </div>
 

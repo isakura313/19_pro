@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: localhost
--- Время создания: Фев 03 2020 г., 19:42
+-- Время создания: Фев 05 2020 г., 19:55
 -- Версия сервера: 10.3.16-MariaDB
 -- Версия PHP: 7.3.7
 
@@ -54,8 +54,8 @@ INSERT INTO `anchors` (`id`, `color`, `path`, `content`, `ordera`) VALUES
 
 CREATE TABLE `cards` (
   `id` int(11) NOT NULL,
-  `img` varchar(100) NOT NULL,
-  `header` varchar(100) NOT NULL,
+  `img` varchar(250) NOT NULL,
+  `header` varchar(250) NOT NULL,
   `parag` text NOT NULL,
   `ordera` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -65,12 +65,10 @@ CREATE TABLE `cards` (
 --
 
 INSERT INTO `cards` (`id`, `img`, `header`, `parag`, `ordera`) VALUES
-(1, 'card__moscow', 'Путешествия по России', 'Балалайки, матрешки, Кремль', 5),
-(2, 'card__london', 'Путешествия по Европе', 'Разные страны, разные культуры! Все самое модное в Европе!', 10),
-(3, 'card__africa', 'Путешествия по Африке', 'Классные сафари, быстрые львы и неверотные саванны! Все в одном флаконе! Бонус: купание с крокодилами', 15),
-(4, 'card__south', 'Путешествия по Южной Америке', 'Южная Америка ждет нас! И там куда безопаснее, чем в американских фильмах!', 20),
-(5, 'card__north', 'Путешествия по Северной Америке', 'Конечно мы проедем всю Америку, и обязательно заедем в Голливуд!', 25),
-(6, 'card__australia', 'Путешествия по Австралии', 'Австралия, кенгуру, летающих пауков там нет! Или есть. Приезжайте и проверьте сами', 30);
+(10, '', 'asdasdasd', ' asd', 50),
+(12, 'img/upload_img/5e3b07b68eff3vk.png', 'Руц', ' фывфыв', 50),
+(15, 'img/upload_img/5e3afd2f386aeberlin.png', 'header', ' berlin', 20),
+(20, '', 'asdasd', ' asd', 300);
 
 -- --------------------------------------------------------
 
@@ -237,7 +235,7 @@ ALTER TABLE `anchors`
 -- AUTO_INCREMENT для таблицы `cards`
 --
 ALTER TABLE `cards`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT для таблицы `faq`
