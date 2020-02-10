@@ -15,6 +15,7 @@
         <a class="side_nav__a" href="#about">О нас</a>
         <a class="side_nav__a" href="#contacts">Контакты</a>
     </div>
+
     <div class="promo">
         <div class="action">
             <h3 class="action__h3">

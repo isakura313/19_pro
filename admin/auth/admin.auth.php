@@ -8,13 +8,13 @@ require $_SERVER['DOCUMENT_ROOT']. "/19_pro/admin/admin.head.php";
 <div class="field">
   <label class="label">Имя</label>
   <div class="control">
-    <input class="input" type="text" placeholder="Введите имя" required>
+    <input class="input" type="text" placeholder="Введите имя" required name="name">
   </div>
 </div>
 <div class="field">
   <label class="label">Пароль</label>
   <div class="control">
-    <input class="input" type="password" placeholder="Введите пароль" required>
+    <input class="input" type="password" placeholder="Введите пароль" required name="password">
   </div>
 </div>
 <button class="button is-pulled-right is-danger" type="sumbit"> Отправить </button>

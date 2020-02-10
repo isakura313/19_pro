@@ -160,21 +160,21 @@ form.addEventListener("submit", validate);
 }
 
 
-function draw() {
-    console.log(this);
-    this.style.color = "blue";
-    this.innerHTML = "*****";
-
-}
+// function draw() {
+//     console.log(this);
+//     this.style.color = "blue";
+//     this.innerHTML = "*****";
+//
+// }
 let header = document.querySelector("header");
 let a_arr = header.querySelectorAll("a");
 
 //к сожалению, map не сработает, потому что элементы являются коллекцией,
 // а не полноценным массивом
-a_arr.forEach(el => {
-    el.addEventListener("mouseover", draw, true);
-});
-
+// a_arr.forEach(el => {
+//     el.addEventListener("mouseover", draw, true);
+// });
+//
 
 // alert(promo_form.classList.contains(def_animation));
 

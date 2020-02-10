@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: localhost
--- Время создания: Фев 05 2020 г., 19:55
+-- Время создания: Фев 10 2020 г., 19:40
 -- Версия сервера: 10.3.16-MariaDB
 -- Версия PHP: 7.3.7
 
@@ -175,6 +175,27 @@ INSERT INTO `li_info` (`id`, `content`, `ordera`) VALUES
 (1, 'Веселые анимации', 1),
 (2, 'Неплохие номера', 2);
 
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `users`
+--
+
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `password` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `users`
+--
+
+INSERT INTO `users` (`id`, `name`, `email`, `password`) VALUES
+(1, 'Прфывфыв', 'isak@asd.com', '202cb962ac59075b964b07152d234b70'),
+(2, 'Прфывфыв', 'isak@asd.com', '202cb962ac59075b964b07152d234b70');
+
 --
 -- Индексы сохранённых таблиц
 --
@@ -222,6 +243,12 @@ ALTER TABLE `li_info`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Индексы таблицы `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT для сохранённых таблиц
 --
 
@@ -265,6 +292,12 @@ ALTER TABLE `keywords`
 -- AUTO_INCREMENT для таблицы `li_info`
 --
 ALTER TABLE `li_info`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT для таблицы `users`
+--
+ALTER TABLE `users`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
