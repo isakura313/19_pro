@@ -13,14 +13,14 @@ require $_SERVER['DOCUMENT_ROOT']. "/19_pro/admin/admin.head.php";
     </section>
         <div class="columns">
             <div class="column has-text-centered is-full">
-                <a href="admin.parag.php"> 
+                <a href="/admin/parag"> 
                 <button class="button is-size-4 is-danger">
                  Отредактировать параграфы
                 </button>
                 </a>
-                <a href="admin.cards.php"> 
+                <a href="/admin/cards"> 
                     <button class="button is-size-4 is-link">Отредактировать карточки </button></a>  
-                <a href="admin.anchor.php"> 
+                <a href="/admin/anchor"> 
                     <button class="button is-size-4 is-warning">Отредактировать ссылки
                 </button>
                 </a>
