@@ -1,11 +1,5 @@
 <?php
-
-function get_full_path($file){
-    $path = "http://{$_SERVER['HTTP_HOST']}/19_pro/{$file}";
-    return $path;
-}
-
-
+    include  $_SERVER['DOCUMENT_ROOT']. "/19_pro/classes/Util.php";
     require $_SERVER['DOCUMENT_ROOT']. "/19_pro/includes/config.inc.php";
     echo "<head>
     <meta charset='UTF-8'>
@@ -20,8 +14,9 @@ function get_full_path($file){
     echo $key;
     echo "<link rel='shortcut icon' href='favicon.png' type='image/png'>";
 
-    echo "<link rel='stylesheet' href=";
-    echo get_full_path('css/style.css');
+//    echo "<link rel='stylesheet' href=";
+//    echo get_full_path('css/style.css');
+   echo Util::get_full_css('css/style.css');
     
 
     echo "<link href='https://fonts.googleapis.com/css?family=Playfair+Display|Roboto&display=swap' rel='stylesheet'>
