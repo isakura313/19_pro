@@ -10,9 +10,7 @@ echo "<header class='header'>
     href='{$anchor['Path'][$i]}'> 
     {$anchor['Content'][$i]}</a>";
   }
-            // <a href='#main'>Главная</a>
-            // <a href='#about'>О нас</a>
-            // <a href='#contacts'>Контакты</a>
+
        echo" </nav>
 </header>";
 

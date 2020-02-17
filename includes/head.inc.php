@@ -11,25 +11,14 @@
         $key = implode(',', $keywords);
        
     
-    echo $key;
-    echo "<link rel='shortcut icon' href='favicon.png' type='image/png'>";
-
-//    echo "<link rel='stylesheet' href=";
-//    echo get_full_path('css/style.css');
-    echo    Util::get_full_css('css/style.css');
-    
-
+    echo $key.">";
+    echo Util::get_full_favicon('favicon.png');
+    echo Util::get_full_css('css/style.css');
     echo "<link href='https://fonts.googleapis.com/css?family=Playfair+Display|Roboto&display=swap' rel='stylesheet'>
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css'>";
-
-//    echo "<script src='";
-//    echo get_full_path("jq.js");
-//    echo "'defer> </script>";
-//
-//    echo "<script src='";
-//    echo get_full_path("main.js");
-//    echo "'defer></script>";
-
+    
+    echo Util::get_full_js('jq.js');
+    echo Util::get_full_js('main.js');
 
    echo "<title> $title </title>
 </head>";
