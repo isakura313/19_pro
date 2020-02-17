@@ -1,15 +1,11 @@
 <!DOCTYPE html>
 <html lang="ru">
-<?php
-    $title = "Путешествия вокруг земли";
-    require $_SERVER['DOCUMENT_ROOT']. "/19_pro/includes/head.inc.php";
+<?php $title = "Путешествия вокруг земли";
+     require $_SERVER['DOCUMENT_ROOT']. "/19_pro/includes/head.inc.php";
 ?>
 
 <body>
-<?php
-    require $_SERVER['DOCUMENT_ROOT']. "/19_pro/includes/header.inc.php";
-    // print_r($_SERVER);
-?>
+<?php require $_SERVER['DOCUMENT_ROOT']. "/19_pro/includes/header.inc.php"; ?>
     <div class="side_nav">
         <a class="side_nav__a" href="#main">Главная</a>
         <a class="side_nav__a" href="#about">О нас</a>

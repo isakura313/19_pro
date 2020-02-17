@@ -1,4 +1,11 @@
 <?php
+
+function get_full_path($file){
+    $path = "http://{$_SERVER['HTTP_HOST']}/19_pro/{$file}";
+    return $path;
+}
+
+
     require $_SERVER['DOCUMENT_ROOT']. "/19_pro/includes/config.inc.php";
     echo "<head>
     <meta charset='UTF-8'>
@@ -11,22 +18,24 @@
        
     
     echo $key;
-    echo "<link rel='shortcut icon' href='favicon.png' type='image/png'>
+    echo "<link rel='shortcut icon' href='favicon.png' type='image/png'>";
 
-    <link rel='stylesheet' href='";
-    echo $_SERVER['HTTP_HOST']."/19_pro/css/style.css";
-    echo"'>";
-
-    echo "<link rel='stylesheet' href='http://";
-    echo $_SERVER['HTTP_HOST'];
-    echo "/19_pro/css/style.css'>";
-
-
+    echo "<link rel='stylesheet' href=";
+    echo get_full_path('css/style.css');
+    
 
     echo "<link href='https://fonts.googleapis.com/css?family=Playfair+Display|Roboto&display=swap' rel='stylesheet'>
-    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css'>
-    <script src='jq.js' defer></script>
-    <script src='main.js' defer></script>
-    <title> $title </title>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css'>";
+
+    echo "<script src='";
+    echo get_full_path("jq.js");
+    echo "'defer> </script>";
+
+    echo "<script src='";
+    echo get_full_path("main.js");
+    echo "'defer></script>";
+
+
+   echo "<title> $title </title>
 </head>";
 echo $key;

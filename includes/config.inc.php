@@ -103,3 +103,4 @@ if($result = $connect->query("SELECT * FROM cards")){
 
 }
 
+
