@@ -32,6 +32,7 @@ if(preg_match($pattern_name, $name)  && preg_match($pattern_mail, $mail)
     }
 
     $password = md5($password);
+
     $sql = "INSERT INTO users VALUES (NULL, '$name','$mail','$password')";
     if($connect->query($sql)) {
         echo "<h1>Вы успешно зарегестрированы </h1>
