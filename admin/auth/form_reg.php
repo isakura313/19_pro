@@ -16,7 +16,6 @@ $pattern_name = '/\w{3,}/';
 $pattern_mail = '/\w+@\w+\.\w+/';
 $pattern_password = '/(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z\d]{8,}/';
 
-
 $password = $_POST["password"];
 $dubl_password = $_POST["dubl_password"];
 
@@ -51,9 +50,5 @@ if(preg_match($pattern_name, $name)  && preg_match($pattern_mail, $mail)
     echo "<h1> Ты что хакер? уходи! </h1>";
     print_r($_POST);
 } 
-
-
-
-
 
 ?>
