@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: localhost
--- Время создания: Фев 19 2020 г., 20:13
+-- Время создания: Фев 19 2020 г., 22:38
 -- Версия сервера: 10.3.16-MariaDB
 -- Версия PHP: 7.3.7
 
@@ -193,10 +193,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`) VALUES
-(1, 'Прфывфыв', 'isak@asd.com', '202cb962ac59075b964b07152d234b70'),
-(2, 'Прфывфыв', 'isak@asd.com', '202cb962ac59075b964b07152d234b70'),
-(3, 'PAVEL', 'pavel@com.com', '99940fd1956101b4d069270437a745b1'),
-(4, 'Pavel', 'isakura313@gmail.com', '99940fd1956101b4d069270437a745b1');
+(5, 'Paul', 'isakura313@gmail.com', 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3, 19-02-2020');
 
 --
 -- Индексы сохранённых таблиц
@@ -300,7 +297,7 @@ ALTER TABLE `li_info`
 -- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

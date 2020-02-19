@@ -1,6 +1,8 @@
 <?php
     require $_SERVER['DOCUMENT_ROOT']. "/19_pro/includes/config.inc.php";
-
+    require $_SERVER['DOCUMENT_ROOT']. "/19_pro/classes/db.php";
+    print_r(db::getdbconnect()->query("SELECT * FROM users"));
+    
 // print_r($anchor);
 echo "<header class='header'>
       <div class='logo'></div>
