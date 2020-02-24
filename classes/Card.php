@@ -1,8 +1,10 @@
 <?php
 class Card
 {
+
 public function __construct($id, $img, $header, $parag, $ordera)
 {
+    #должно быть в конструкторе имя
     $this->id = $id;
     $this->img = $img;
     $this->header = $header;
@@ -17,6 +19,7 @@ public function return_view(){
     <h3 class='card__h3'>". $this->header."</h3>
     <div class='card__line'></div>
        <p class='card__p'>".$this->parag."</p>";
+
     
 }
 }
