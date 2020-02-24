@@ -7,7 +7,7 @@ echo "<header class='header'>
       <div class='logo'></div>
         <nav class='nav'>";
   for ($i=0; $i < count( $anchor["Path"]); $i++) { 
-   ECHO "<a style='color:{$anchor['Color'][$i]}' 
+   ECHO "<a class='{$anchor['Color'][$i]}' 
     href='{$anchor['Path'][$i]}'> 
     {$anchor['Content'][$i]}</a>";
   }
