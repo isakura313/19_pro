@@ -1,7 +1,7 @@
 <?php
 
 require $_SERVER['DOCUMENT_ROOT']. "/19_pro/includes/connect.inc.php";
-require $_SERVER['DOCUMENT_ROOT']. "/19_pro/classes/db.php";
+require $_SERVER['DOCUMENT_ROOT']. "/19_pro/classes/Db.php";
 
 class User
 {
@@ -13,30 +13,22 @@ private $pattern_name = '/\w{3,}/';
 protected $pattern_mail = '/\w+@\w+\.\w+/';
 
 
-//private static function connect(){
-//    $connect = new mysqli("locahost", "root", "", "14_10");
-//    return $connect;
-//}
-
-
-
  public function login($user_name, $user_password)
  {
      $this->user_name = trim($user_name);
      $this->user_password = hash('sha256', $user_password);
-
-     $login_query = db::getdbconnect()->query("SELECT FROM users WHERE Name = '$this->user_name'");
-
-     $user = db::getdbconnect()->fetch_array($login_query);
-
-         if ($this->user_password == $user['Password']) {
+     $result = Db::getdbconnect()->query("SELECT * FROM users WHERE Name = '$this->user_name'");
+     $user = $result->fetch_array();
+      
+         if ($this->user_password == $user['password']) {
              session_start();
-
              $_SESSION['name'] = $this->user_name;
-
+             echo "вы были успешно залогинены";
+             header("Location:localhost:8080");
          } else {
-             return "Нет пользователя с таким именем";
+             echo "Нет пользователя с таким именем";
          }
+         echo "mda";
  }
 
 
@@ -58,7 +50,7 @@ protected $pattern_mail = '/\w+@\w+\.\w+/';
 
      # проводить валидизация пароля до его хеширования,
      # а в БД отправлять хешированную версию
-     $result = db::getdbconnect()->query("SELECT * FROM users WHERE Name = '$this->user_name'");
+     $result = Db::getdbconnect()->query("SELECT * FROM users WHERE Name = '$this->user_name'");
      //здесь у нас процедурный стиль
        $row_cnt = $result->num_rows;
      if( $row_cnt == 1){
@@ -69,7 +61,7 @@ protected $pattern_mail = '/\w+@\w+\.\w+/';
          $sql = "INSERT INTO users VALUES (NULL, '$this->user_name',
             '$this->user_email','$this->user_password, $this->user_date')";
          //здесь процедурный стиль
-         db::getdbconnect()->query($sql);
+         Db::getdbconnect()->query($sql);
              echo "<h1>Вы успешно зареганы </h1>
         <script>
             setTimeout(()=>{
@@ -77,7 +69,7 @@ protected $pattern_mail = '/\w+@\w+\.\w+/';
             }, 2000)
         </script>";
      }    else{
-          echo "мда";
+          echo "вы не смогли пройти простейшую валидизацию. Кроме того, русские буквы запрещены на сервере";
      }
 
 

@@ -6,7 +6,7 @@ require $_SERVER['DOCUMENT_ROOT']. "/19_pro/admin/admin.head.php";
 
 <div class="hero is-fullheight columns is-centered has-background-link ">
 
-<form action="/postreg" method="POST" class="column is-half is-offset-3 has-background-white has-text-centered">
+<form action="/reg_procces" method="POST" class="column is-half is-offset-3 has-background-white has-text-centered">
 <h1 class="is-size-4"> Привет зарегайся:</h1>
 <noscript>
      <p>Включите javascript для корректной работы сайта!</p>

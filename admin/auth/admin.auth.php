@@ -3,7 +3,7 @@ require $_SERVER['DOCUMENT_ROOT']. "/19_pro/admin/admin.head.php";
 ?>
 <div class="hero is-fullheight columns is-centered has-background-link ">
 
-<form action="" method="POST" class="column is-half is-offset-3 has-background-white has-text-centered">
+<form action="/auth_procces" method="POST" class="column is-half is-offset-3 has-background-white has-text-centered">
 <h1 class="is-size-4"> Привет войди:</h1>
 <div class="field">
   <label class="label">Имя</label>
