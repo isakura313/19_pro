@@ -14,7 +14,7 @@ if($result = $connect->query("SELECT * FROM keywords")){
     $result->close();
 }
 
- if($result = $connect->query("SELECT * FROM anchors")){
+if($result = $connect->query("SELECT * FROM anchors")){
     $anchor = ["Color" =>[], "Path"=> [],"Content"=>[], "Order"=>[]];
     while($row = $result->fetch_assoc()){
         array_push($anchor["Color"], $row["color"]);
@@ -23,11 +23,21 @@ if($result = $connect->query("SELECT * FROM keywords")){
         array_push($anchor["Order"], $row["ordera"]);
     }
     $result->close();
- }
+}
 
+if($result = $connect->query("SELECT * FROM anchors")){
+    $anchor_cms = ["Id"=>[], "Color"=>[], "Path"=> [], "Content" => [], "Order" => []];
+    while($row = $result->fetch_assoc()){
+        array_push($anchor_cms["Id"], $row["id"]);
+        array_push($anchor_cms["Color"], $row["color"]);
+        array_push($anchor_cms["Path"], $row["path"]);
+        array_push($anchor_cms["Content"], $row["content"]);
+        array_push($anchor_cms["Order"], $row["ordera"]);
+    }
+    $result->close();
+}
 
-
- if($result = $connect->query("SELECT * FROM info ORDER BY ordera")){
+if($result = $connect->query("SELECT * FROM info ORDER BY ordera")){
     $info = [];
     while($row = $result->fetch_assoc()){
         array_push($info, $row["content"]);
