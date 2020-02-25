@@ -54,41 +54,43 @@ protected $user_date; #дата регистрации пользователя
      $this->user_date = date("Y-m-d");
 
 
+
      # проводить валидизация пароля до его хеширования,
      # а в БД отправлять хешированную версию
      $result = Db::getdbconnect()->query("SELECT * FROM users WHERE Name = '$this->user_name'");
      $row_cnt = $result->num_rows;
      if ($row_cnt == 1) {
          echo "имя используется!  Попробуйте другое!";
-     } elseif (preg_match($this->pattern_name, $this->user_name) &&
-         preg_match($this->pattern_mail, $this->user_email)
-         && $this->user_password == $this->dubl_password) {
-         $sql = "INSERT INTO users VALUES (NULL, '$this->user_name',
-            '$this->user_email','$this->user_password, $this->user_date')";
-        if(Db::getdbconnect()->query($sql)){
+     } elseif(Validate::validate_name($this->user_name)  &&
+                Validate::validate_email($this->user_email)
+            && Validate::validate_password($this->user_password)) {
+
+         $this->user_password = hash('sha256', $this->user_password);
+         
+//     $sql = "INSERT INTO users  VALUES (NULL, '$this->user_name',
+//            '$this->user_email','$this->user_password, NULL)";//
+     $sql = "INSERT INTO users  VALUES (NULL, '$this->user_name',
+            '$this->user_email','$this->user_password', '$this->user_date')";
+
+
+       echo Db::getdbconnect()->query($sql);
             echo "все нормально";
-        }
-             echo "<h1>Вы успешно зареганы </h1>
+            echo $this->user_date;
+
+             echo "<h1>Вы успешно зарегестрированы </h1>
         
-//        <script>
-//            setTimeout(()=>{
-//                window.location.assign('http://localhost:8080/admin');
-//            }, 2000)
-//        </script>";
+        <script>
+            setTimeout(()=>{
+                window.location.assign('http://localhost:8080/admin');
+            }, 2000)
+        </script>";
          
          } else {
              echo "вы не смогли пройти простейшую валидизацию. Кроме того, русские буквы запрещены на сервере";
          }
+ }
 
-
-     }
- 
 }
 
 
- #login
-#logout
-# добавление юзера регистрация
-# оставление комментария
-# canedit content : true
 
