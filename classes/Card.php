@@ -18,6 +18,8 @@ public function return_view(){
     <div class='card__line'></div>
        <p class='card__p'>".$this->parag."</p>";
 
-    
 }
+
+//имлентировать состояния
+
 }

@@ -1,6 +1,53 @@
 <?php
 require $_SERVER['DOCUMENT_ROOT']. "/19_pro/admin/admin.head.php";
 require $_SERVER['DOCUMENT_ROOT']. "/19_pro/includes/config.inc.php";
+require $_SERVER['DOCUMENT_ROOT']. "/19_pro/classes/Db.php";
+
+
+
+if(isset($POST['choose'])) {
+    $ans = $_POST['choose'];
+    $id = $_POST['id'];
+    $p = $_POST['parag_cont'];
+    $ordera = $_POST['ordera'];
+
+
+    if ($ans == "ins") {
+        $sql = "INSERT INTO info VALUES ('$id', '$p', '$ordera')";
+        if (Db::getdbconnect()->query($sql)) {
+            echo "Новая запись успешно загружена $back $back_timer";
+        } else {
+            echo "Произошло фиаско со вставкой";
+        }
+
+        exit();
+    }
+
+    if ($ans == "del") {
+        $id = trim($id);
+        $sql = "DELETE FROM info WHERE id='$id'";
+        if (Db::getdbconnect()->query($sql)) {
+            echo "Записть успешно удалена $back $back_timer";
+        } else {
+            echo "Произошло фиаско";
+        }
+//        Db::getdbconnect()->close();
+        exit();
+    }
+    if ($ans == "update") {
+
+        $id = trim($id);
+        $sql = "UPDATE info SET content='$p', ordera='$ordera' WHERE id='$id'";
+        if (Db::getdbconnect()->query($sql)) {
+            echo "Запись успешно отредактировано $back $back_timer";
+
+        } else {
+            echo "Произошло фиаско";
+        }
+//        Db::getdbconnect()->close();
+        exit();
+    }
+}
 
 ?>
 <section class="columns has-background-info is-centered">
@@ -12,7 +59,7 @@ require $_SERVER['DOCUMENT_ROOT']. "/19_pro/includes/config.inc.php";
         <img src="../img/moscow.png" class="is-size-6">
         <!-- сделать так что бы мы получали из первой карточки картинку -->
     </figure>
-    <form action="form_p.php" method="GET" class="has-background-light">
+    <form method="POST" class="has-background-light">
         <div class="field">
             <label class="radio">
                 <input type="radio" name="choose" value="ins" required>

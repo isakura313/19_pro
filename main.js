@@ -190,6 +190,25 @@ function CheckEmpty(el, label_name) {
     }
 }
 
+// реализация AJAX
+let btn__sort = document.querySelector(".btn__sort");
+btn__sort.addEventListener("change", function(){
+    console.log("hello");
+    console.log(btn__sort.value);
+    this.disabled = true;
+    let xhr = new XMLHttpRequest();
+    xhr.open('GET', `http://localhost:8080/19_pro/handler.php?price=${btn__sort.value}`);
+    xhr.send();
+
+    let that = this;
+    xhr.addEventListener("load", function(){
+        let data = xhr.responseText;
+                            xhr.responseXML;
+        console.log(data);    //здесь вызывается функция js которая рисует карточки
+        that.disabled = false;
+    });
+});
+
 
 
 

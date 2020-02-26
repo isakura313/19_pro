@@ -37,6 +37,12 @@
 <?php
 require $_SERVER['DOCUMENT_ROOT']. "/19_pro/includes/info.inc.php";
 require $_SERVER['DOCUMENT_ROOT']. "/19_pro/includes/info_2.inc.php";
+?>
+<select class="btn__sort">
+    <option value="asc"> от малого к большому</option>
+    <option value="desc"> от большого к малому</option>
+</select>
+<?php
 require $_SERVER['DOCUMENT_ROOT']. "/19_pro/includes/cards.inc.php";
 ?>
 
