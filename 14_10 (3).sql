@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: localhost
--- Время создания: Фев 19 2020 г., 22:38
+-- Время создания: Фев 26 2020 г., 17:14
 -- Версия сервера: 10.3.16-MariaDB
 -- Версия PHP: 7.3.7
 
@@ -43,9 +43,10 @@ CREATE TABLE `anchors` (
 INSERT INTO `anchors` (`id`, `color`, `path`, `content`, `ordera`) VALUES
 (1, 'white', '#main', 'Главная', 5),
 (2, 'red', '#about', 'О нас', 10),
-(3, 'green', '#contacts', 'Контакты', 15),
+(3, 'red', '#contacts', 'Контакты', 15),
 (4, 'red', '/admin', 'Админка', 20),
-(6, 'red', '/reg', 'регистрация', 30);
+(6, 'red', '/reg', 'регистрация', 30),
+(7, 'red', '/auth', 'sign in', 20);
 
 -- --------------------------------------------------------
 
@@ -60,16 +61,6 @@ CREATE TABLE `cards` (
   `parag` text NOT NULL,
   `ordera` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Дамп данных таблицы `cards`
---
-
-INSERT INTO `cards` (`id`, `img`, `header`, `parag`, `ordera`) VALUES
-(10, '', 'asdasdasd', ' asd', 50),
-(12, 'img/upload_img/5e3b07b68eff3vk.png', 'Руц', ' фывфыв', 50),
-(15, 'img/upload_img/5e3afd2f386aeberlin.png', 'header', ' berlin', 20),
-(20, '', 'asdasd', ' asd', 300);
 
 -- --------------------------------------------------------
 
@@ -185,15 +176,24 @@ CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `name` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
-  `password` varchar(255) NOT NULL
+  `password` varchar(255) NOT NULL,
+  `date` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Дамп данных таблицы `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `password`) VALUES
-(5, 'Paul', 'isakura313@gmail.com', 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3, 19-02-2020');
+INSERT INTO `users` (`id`, `name`, `email`, `password`, `date`) VALUES
+(5, 'Paul', 'isakura313@gmail.com', 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3, 19-02-2020', '0000-00-00'),
+(6, 'isakura313', 'isakura313@mail.ru', '737b58a67663a7dba33d29b369e995427be551bbdc5b358d2ccb7d1a514e3d5d, 21-02-2020', '0000-00-00'),
+(7, 'Pokemon', 'pokemon@example.ru', 'a665a45920422f9d417e4867efdc4fb8a04a1f3fff1fa07e998e86f7f7a27ae3, 24-02-2020', '0000-00-00'),
+(8, 'павел', 'фывфыв', 'фывфыв', '1000-00-00'),
+(9, 'asdasd', 'asdasd', 'asdasd', NULL),
+(10, 'pokemon3', 'pokemon3@exa.com', 'asdasd', NULL),
+(11, 'pokemon4', 'pokemon4@exa.com', '6bac49cd894e20104570671846c5f59b8e0114866918f3507cbb363b10091a3f', NULL),
+(12, 'pokemon5', 'pokemon5@exa.com', 'd38371d7758d48022a342e6c0a9a736a92fe09c355253de9c2c8edb8a5e9a4b6', '1000-00-00'),
+(13, 'pokemon6', 'pokemon6@exa.com', '6bac49cd894e20104570671846c5f59b8e0114866918f3507cbb363b10091a3f', '2020-02-24');
 
 --
 -- Индексы сохранённых таблиц
@@ -255,7 +255,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT для таблицы `anchors`
 --
 ALTER TABLE `anchors`
-  MODIFY `id` int(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(6) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT для таблицы `cards`
@@ -297,7 +297,7 @@ ALTER TABLE `li_info`
 -- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

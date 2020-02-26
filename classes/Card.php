@@ -13,9 +13,7 @@ public function __construct($id, $img, $header, $parag, $ordera)
 }
 
 public function return_view(){
-    return "<div class='card__img' 
-    style='background-image:url(
-    ".Util::get_full_img($this->img).");'> </div>
+    return "<div class='card__img' style='background-image:url(".Util::get_full_img($this->img).");'> </div>
     <h3 class='card__h3'>". $this->header."</h3>
     <div class='card__line'></div>
        <p class='card__p'>".$this->parag."</p>";

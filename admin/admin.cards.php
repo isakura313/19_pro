@@ -1,6 +1,101 @@
 <?php
 require $_SERVER['DOCUMENT_ROOT']. "/19_pro/admin/admin.head.php";
 require $_SERVER['DOCUMENT_ROOT']. "/19_pro/includes/config.inc.php";
+require $_SERVER['DOCUMENT_ROOT']. "/19_pro/classes/Db.php";
+
+if(isset($_POST['choose'])) {
+    echo"hello";
+    $ans = $_POST['choose'];
+    $id = $_POST['id'];
+    $header = $_POST['header'];
+    $parag = $_POST['parag_cont'];
+    $ordera = $_POST['ordera'];
+
+
+    if ($ans == "ins") {
+        $upload_name = uniqid() . $_FILES['picture']['name']; // несовершенный код
+        $path = "img/upload_img/{$upload_name}";
+        $uploaddir = $_SERVER["DOCUMENT_ROOT"] . "/19_pro/img/upload_img/";
+        $uploadfile = $uploaddir . $upload_name;
+        //  сам процесс перемещения файла на сервер
+        // процесс валидизации размера
+        if ($_FILES['picture']['size'] >= 2000000) {
+            echo "так много нельзя!Найдите картинку поменьше!";
+            die();
+        }
+
+        if (move_uploaded_file($_FILES['picture']['tmp_name'], $uploadfile)) {
+            echo "файл в общем корректный и все работает верно";
+        } else {
+            echo "Возможна атака с помощью файловой загрузки";
+        }
+
+        $sql = "INSERT INTO cards VALUES ('$id', '$path', '$header', '$parag', '$ordera' )";
+        if (Db::getdbconnect()->query($sql)) {
+            echo "Новая запись успешно загружена $back";
+        } else {
+            echo "Произошло фиаско";
+        }
+        exit();
+    }
+
+    if ($ans == "del") {
+        $id = trim($id);
+        $sql_path = "SELECT img FROM cards WHERE id='$id'";
+        $result = Db::getdbconnect()->query($sql_path);
+        while ($row = $result->fetch_assoc()) {
+            echo " картинка успешна удалена";
+            unlink($_SERVER["DOCUMENT_ROOT"] . "/19_pro/" . $row['img']);
+        }
+        $sql = "DELETE FROM cards WHERE id='$id'";
+
+        if (Db::getdbconnect()->query($sql)) {
+            echo "Запись успешно удалена";
+        } else {
+            echo "Произошло фиаско";
+        }
+        exit();
+    }
+
+    if ($ans == "update") {
+        $id = trim($id);
+
+        $sql_path = "SELECT img FROM cards WHERE id='$id'";
+        $result = Db::getdbconnect()->query($sql_path);
+        while ($row = $result->fetch_assoc()) {
+            echo " картинка успешна удалена";
+            echo "<br>";
+            unlink($_SERVER["DOCUMENT_ROOT"] . "/19_pro/" . $row['img']);
+        }
+
+        $upload_name = uniqid() . $_FILES['picture']['name']; // несовершенный код
+        $path = "img/upload_img/{$upload_name}";
+        $uploaddir = $_SERVER["DOCUMENT_ROOT"] . "/19_pro/img/upload_img/";
+        $uploadfile = $uploaddir . $upload_name;
+
+        if ($_FILES['picture']['size'] >= 2000000) {
+            echo "так много нельзя!Найдите картинку поменьше!";
+            die();
+        }
+//нужно добавить валидизацию на скрипт
+
+        if (move_uploaded_file($_FILES['picture']['tmp_name'], $uploadfile)) {
+            echo "файл в общем корректный и все работает верно";
+        } else {
+            echo "Возможна атака с помощью файловой загрузки";
+        }
+        $sql = "UPDATE cards SET img='$path',header='$header', parag='$parag', ordera='$ordera' WHERE id='$id'";
+
+        if (Db::getdbconnect()->query($sql)) {
+            echo "Запись успешно отредактирована $back $back_timer";
+
+        } else {
+            echo "Произошло фиаско";
+        }
+        exit();
+    }
+
+}
 ?>
 <section class="columns has-background-info is-centered">
     <div class="column is-half has-text-centered">
@@ -11,7 +106,7 @@ require $_SERVER['DOCUMENT_ROOT']. "/19_pro/includes/config.inc.php";
         <img src="../img/kangaroo.png" class="is-size-6">
         <!-- сделать так что бы мы получали из первой карточки картинку -->
     </figure>
-    <form action="form_cards.php" method="POST" class="has-background-white ter" enctype="multipart/form-data">
+    <form  method="POST" class="has-background-white ter" enctype="multipart/form-data">
         <div class="field">
             <label class="radio">
                 <input type="radio" name="choose" value="ins" required>
