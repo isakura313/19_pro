@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: localhost
--- Время создания: Фев 26 2020 г., 17:14
+-- Время создания: Фев 26 2020 г., 21:31
 -- Версия сервера: 10.3.16-MariaDB
 -- Версия PHP: 7.3.7
 
@@ -58,9 +58,19 @@ CREATE TABLE `cards` (
   `id` int(11) NOT NULL,
   `img` varchar(250) NOT NULL,
   `header` varchar(250) NOT NULL,
-  `parag` text NOT NULL,
+  `parag` int(11) NOT NULL,
   `ordera` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `cards`
+--
+
+INSERT INTO `cards` (`id`, `img`, `header`, `parag`, `ordera`) VALUES
+(1, 'img/upload_img/5e569d74c6a2bphoto_2020-02-25 18.56.05.jpeg', 'Ð‘ÐµÑ€Ð»Ð¸Ð½', 1000, 1),
+(2, 'img/upload_img/5e56a0947b87aphoto_2020-02-25 18.55.58.jpeg', 'austria', 2000, 2),
+(21, '', 'Таиланд', 4000, 5),
+(22, '', 'китай', 500, 30);
 
 -- --------------------------------------------------------
 
@@ -119,6 +129,7 @@ CREATE TABLE `info` (
 --
 
 INSERT INTO `info` (`id`, `content`, `ordera`) VALUES
+(1, 'lore asd', 100),
 (5, ' такового нет', 200),
 (12, 'asdasd', 2323),
 (20, ' asdf', 110),
@@ -261,7 +272,7 @@ ALTER TABLE `anchors`
 -- AUTO_INCREMENT для таблицы `cards`
 --
 ALTER TABLE `cards`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT для таблицы `faq`
