@@ -80,24 +80,26 @@ if($result = $connect->query("SELECT * FROM faq ORDER BY ordera")){
 
 
 if($result = $connect->query("SELECT * FROM cards")){
-    $cards = ["Img"=>[], "Header"=> [], "Parag" => [], "Ordera" => []];
+    $cards = ["Img"=>[], "Header"=> [], "Parag" => [], "Ordera" => [], "Date"=> []];
     while($row = $result->fetch_assoc()){
         array_push($cards["Img"], $row["img"]);
         array_push($cards["Header"], $row["header"]);
         array_push($cards["Parag"], $row["parag"]);
         array_push($cards["Ordera"], $row["ordera"]);
+        array_push($cards["Date"], $row["date"]);
     }
     $result->close();
 
 }
 if($result = $connect->query("SELECT * FROM cards")){
-    $cards_cms = ["Id"=>[], "Img"=>[], "Header"=> [], "Parag" => [], "Ordera" => []];
+    $cards_cms = ["Id"=>[], "Img"=>[], "Header"=> [], "Parag" => [], "Ordera" => [], "Date" => []];
     while($row = $result->fetch_assoc()){
         array_push($cards_cms["Id"], $row["id"]);
         array_push($cards_cms["Img"], $row["img"]);
         array_push($cards_cms["Header"], $row["header"]);
         array_push($cards_cms["Parag"], $row["parag"]);
         array_push($cards_cms["Ordera"], $row["ordera"]);
+        array_push($cards_cms["Date"], $row["date"]);
     }
     $result->close();
 
