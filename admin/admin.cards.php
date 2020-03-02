@@ -10,6 +10,7 @@ if(isset($_POST['choose'])) {
     $header = $_POST['header'];
     $parag = $_POST['parag_cont'];
     $ordera = $_POST['ordera'];
+    $date = date("Y-m-d");
 
 
     if ($ans == "ins") {
@@ -30,7 +31,7 @@ if(isset($_POST['choose'])) {
             echo "Возможна атака с помощью файловой загрузки";
         }
 
-        $sql = "INSERT INTO cards VALUES ('$id', '$path', '$header', '$parag', '$ordera' )";
+        $sql = "INSERT INTO cards VALUES ('$id', '$path', '$header', '$parag', '$ordera', '$date' )";
         if (Db::getdbconnect()->query($sql)) {
             echo "Новая запись успешно загружена $back";
         } else {

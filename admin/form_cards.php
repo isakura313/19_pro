@@ -33,9 +33,9 @@ if($ans=="ins"){
         echo "Возможна атака с помощью файловой загрузки";
     }
 
-    $sql = "INSERT INTO cards VALUES ('$id', '$path', '$header', '$parag', '$ordera' )";
+    $sql = "INSERT INTO cards VALUES ('$id', '$path', '$header', '$parag', '$ordera')";
    if($connect->query($sql)){
-   echo "Новая запись успешно загружена $back";
+   echo "Новая карточка успешно загружена $back";
    } else{
        echo "Произошло фиаско";
    }
